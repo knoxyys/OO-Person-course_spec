@@ -5,6 +5,12 @@ class Person:
     
     def printname(self):
         return self.fname, self.lname
+
+class Parent(Person):
+    def __init__(self, fname, lname):
+        self.occupation = None
+        self.alumni = False
+        super().__init__(fname, lname)
     
 class Student(Person):
     def __init__(self, fname, lname, student_id, house_group):
@@ -35,7 +41,8 @@ maths = Subject("Maths")
 english = Subject("English")
 software = Subject("Software Engineering")
 
-lucas = Student("Lucas", "Smith", 12345, "Gryffindor")
+lucas = Student("Lucas", "Yang", "ID123987", "Marsh")
 lucas.enrol_class(maths)
 lucas.enrol_class(english)
-print(lucas.show_classes()) # this doesnt work yet, it only prints the memory address
+print(lucas.printname())
+print(maths.student_list())
