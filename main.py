@@ -23,9 +23,8 @@ class Student(Person):
         self.subjects.append(subject_name)
         subject_name.enrol_student(self.student_id)
     
-    def __str__(self):
-        subject_names = [subject.subject_name for subject in self.subjects]
-        return ', '.join(subject_names) # i cant lie i got the first line from chatgpt BUT i did know what to do
+    def showclasses(self):
+        return [subject.subject_name for subject in self.subjects] # fix :)
 
 
 class Subject:
@@ -38,6 +37,7 @@ class Subject:
     
     def enrol_student(self, student_id):
         self.students.append(student_id)
+
 
 
 # the main line is here
@@ -59,6 +59,6 @@ stirling.enrol_class(music)
 stirling.enrol_class(physics)
 stirling.enrol_class(sor)
 
-print(stirling)
+print(stirling.showclasses())
 print(stirling.printname())
 mathsext.print_student_list()
